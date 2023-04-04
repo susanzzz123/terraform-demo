@@ -71,6 +71,16 @@ Right now, the list of collaborators is stored in plain text in the main.tf file
 
 Modify the file so that the list of collaborators is also stored in `terraform.tfvars` and not in `main.tf`.
 
+### Output Values
+You may notice that when running `terraform apply`, it showed you the url of the repository that was created. This is because we specified an output value in the `main.tf` file. Try to view this variable by itself using `terraform output`.
+
+Now, make the output value of the repository URL a **sensitive** value, then change something in the `main.tf` file and run `terraform apply` again. You should notice that the output value is now hidden.
+
+### Bonus: Using Attributes of One Resource as Input to Another
+In `main.tf`, you may have noticed that we have a local variable called `repository_name`, which both specifies the `name` field of the `github_repository` resource and the `repository` field of the `github_repository_collaborator` resource.
+
+However, is there a way to get rid of this local variable? Can we use the input of the `github_repository` resource as the input to the `github_repository_collaborator` resource?
+
 # Clean-up
 When you're finished, you can run the following command to destroy the resources:
 
