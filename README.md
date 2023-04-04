@@ -42,13 +42,11 @@ This will create a private repository named "cis1880-team-project" in your GitHu
 
 Check your GitHub account to make sure that the repository were created successfully.
 
-Once you've verififed that terraform performed all of the proper changes on GitHub, observe that if you now run `terraform plan` Terraform will tell you that there are no more changes to be made:
+Once you've verififed that Terraform performed all of the proper changes on GitHub, if we now run `terraform plan` again, Terraform will tell you that there are no more changes to be made:
 ```bash
-terraform plan
-
 No changes. Your infrastructure matches the configuration.
 ```
-This is because Terraform is **declarative** and recognizes that you have already achieved the desired state outlined in your terraform files. If you were to run `terraform apply`, Terraform would not make any further changes because you are already in your desired state.
+This is because Terraform is **declarative** and recognizes that you have already achieved the desired state outlined in your Terraform files. Likewise, if you were to run `terraform apply`, Terraform would not make any further changes because you are already in your desired state.
 
 ### Terraform Variables
 Notice that when you run `terraform plan` and `terraform apply`, you are prompted to enter your Github personal access token. While this is fine for a demo, it's not ideal for a real project (where we want to keep track of the PAT somewhere instead of having to enter it every time we run terraform commands).
