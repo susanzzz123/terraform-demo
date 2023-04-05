@@ -5,3 +5,13 @@ variable "github_token" {
   type        = string
   description = "GitHub personal access token"
 }
+
+variable "collaborators" {
+  type        = list
+  description = "List of collaborators"
+}
+
+variable "instructors" {
+  type        = list
+  description = "List of instructors"
+}

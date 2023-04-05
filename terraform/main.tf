@@ -5,10 +5,8 @@ provider "github" {
 
 locals {
   repository_name = "cis1880-team-project"
-  collaborators = [
-    "YOUR-GITHUB-USERNAME-HERE",
-    "YOUR-PARTNER-GITHUB-USERNAME-HERE",
-  ]
+  collaborators = var.collaborators
+  instructors = var.instructors
 }
 
 resource "github_repository" "cis1880-team-project" {
@@ -20,6 +18,15 @@ resource "github_repository" "cis1880-team-project" {
     "cis1880",
     "team-project",
   ]
+}
+
+resource "github_repository_collaborator" "cis1880-team-project-instructor" {
+  for_each = toset(local.instructors)
+  repository = local.repository_name
+
+  username = each.key
+  permission = "read"
+  
 }
 
 resource "github_repository_collaborator" "cis1880-team-project_collaborator" {

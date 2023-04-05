@@ -4,6 +4,7 @@
 provider "registry.terraform.io/hashicorp/github" {
   version = "5.19.0"
   hashes = [
+    "h1:A7nQ0HTRFCTb1Gko/6fgMi5gD5y2WT+10GL4PjczcrM=",
     "h1:ka2Od10PPNaq3i6OfxUJI1qdM4uaEiHFKfXi/LrC/t4=",
     "zh:1f9b187f828f31458ad771e28b22b3f440d3f176e3505e339862364e76abbd56",
     "zh:309d5dc846510de9ccb86df4e4cda713e876c66fbbefdc821d81851da9316617",
